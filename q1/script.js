@@ -15,17 +15,29 @@ function createNewRow() {
     let btnDelete = $("<button></button>")
     btnDelete.addClass('btn')
     btnDelete.addClass('btn-danger')
-    btnDelete.text("delete")
+    btnDelete.addClass('me-1')
+        //<i class="fa fa-trash"></i>
+    let delIcon = $("<i></i>")
+    delIcon.addClass("fa")
+    delIcon.addClass("fa-trash")
+    btnDelete.text(" Delete")
+    btnDelete.prepend(delIcon)
+
     btnDelete.val(id)
     btnDelete.attr({
         "onclick": "deleteRow(this)"
     })
+    console.log(btnDelete)
     td1.append(btnDelete)
 
     let btnClone = $("<button></button>")
     btnClone.addClass('btn')
     btnClone.addClass('btn-primary')
-    btnClone.text("clone")
+    let copyIcon = $("<i></i>")
+    copyIcon.addClass("fa")
+    copyIcon.addClass("fa-copy")
+    btnClone.text(" Clone")
+    btnClone.prepend(copyIcon)
     btnClone.val(id)
     btnClone.attr({
         "onclick": "CloneRow(this)"
